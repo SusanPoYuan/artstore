@@ -9,6 +9,7 @@ gem "mini_magick"
 gem "aasm"
 gem "letter_opener", group: :development
 gem "pay2go"
+gem "figaro"
 #
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.2'
