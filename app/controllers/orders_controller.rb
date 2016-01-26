@@ -24,11 +24,7 @@ class OrdersController < ApplicationController
 		@order = current_user.orders.build(order_params)
 
 		if @order.save
-			@order.build_item_cache_form_cart(current_cart)
-			@order.calculate_total!(current_cart)
-			redirect_to order_path(@order.token)
-			current_cart.clean!
-			OrderMailer.notify_order_placed(@order).deliver!
+			OrderPlacingService.new(current_cart, @order).placing_order!
 
 		else
 			render "carts/checkout" 
