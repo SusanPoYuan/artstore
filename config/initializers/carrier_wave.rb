@@ -4,7 +4,7 @@ CarrierWave.configure do |config|
     config.fog_credentials = {
       provider:              'AWS',                        
       aws_access_key_id:     ENV['aws_access_key_id'],          
-      aws_secret_access_key: ENV['aws_secret_access_key'],      # 你的 secret key         
+      aws_secret_access_key: ENV['aws_secret_access_key'],
       region:                'Tokyo'   
     }
     config.fog_directory  = 'poyuantest1'
