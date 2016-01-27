@@ -8,6 +8,7 @@ gem "carrierwave"
 gem "mini_magick"
 gem "aasm"
 gem "letter_opener", group: :development
+gem "roadie", "2.4.3"
 gem "pay2go"
 gem "figaro"
 #
