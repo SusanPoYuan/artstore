@@ -25,7 +25,7 @@ class OrdersController < ApplicationController
 
 		if @order.save
 			OrderPlacingService.new(current_cart, @order).placing_order!
-
+			redirect_to order_path(@order.token)
 		else
 			render "carts/checkout" 
 		end

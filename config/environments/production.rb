@@ -87,8 +87,7 @@ Rails.application.configure do
     address:        "smtp.mailgun.org",
     user_name:      ENV["mailgun_user"],
     password:       ENV["mailgun_secret"],
-    domain:         "sandbox一堆亂碼.mailgun.org", # 你的 mailgun domain name
-
+    domain:         "sandboxd25439406b7b4a73819e6d7b7da0a291.mailgun.org",
     authentication: :plain,
   }
 end
