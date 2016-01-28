@@ -34,6 +34,7 @@ class Admin::ProductsController < AdminController
 	def update
 		@product = Product.find(params[:id])
 		if @product.update(product_params)
+			@product.update_columns(max_quantity: @product.quantity)
 			redirect_to admin_products_path
 		else
 			render :edit

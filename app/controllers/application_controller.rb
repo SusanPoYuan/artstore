@@ -18,13 +18,14 @@ class ApplicationController < ActionController::Base
   private
   
   def find_cart
-    cart = Cart.find_by(id: session[:cart_id])
+    cart = Cart.find_by(id: cookies[:cart_id])
 
     if !cart.present?
       cart = Cart.create
     end
 
     session[:cart_id] = cart.id
-    cart
+    cookies[:cart_id] =  {value: cart.id, expires: 1.hour.from_now}
+    return cart
   end
 end

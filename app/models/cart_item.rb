@@ -17,6 +17,7 @@ class CartItem < ActiveRecord::Base
 
 	def reduce_max_quantity_when_ordered(num)
 		product.max_quantity -= num
+		product.quantity -= num 
 		product.save
 	end
 end
