@@ -81,7 +81,7 @@ Rails.application.configure do
     Pay2go.integration_mode = :production
   end
 
-  config.action_mailer.default_url_options = { host: 'artstore-class-sample.herokuapp.com' }
+  config.action_mailer.default_url_options = { host: 'poyuan-store.herokuapp.com' }
   config.action_mailer.delivery_method = :smtp
   config.action_mailer.smtp_settings = {
     port:           587,

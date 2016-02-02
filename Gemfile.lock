@@ -233,6 +233,8 @@ GEM
     pay2go (0.1.0)
     pg (0.18.4)
     rack (1.6.4)
+    rack-mini-profiler (0.9.8)
+      rack (>= 1.1.3)
     rack-protection (1.5.3)
       rack
     rack-test (0.6.3)
@@ -350,6 +352,7 @@ DEPENDENCIES
   mini_magick
   pay2go
   pg
+  rack-mini-profiler
   rails (= 4.2.2)
   rails_12factor
   roadie (= 2.4.3)
