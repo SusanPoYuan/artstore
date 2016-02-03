@@ -22,10 +22,12 @@
 			</span>
 			<div class="push"></div>
 			<div class="push"></div>
-			<span class="span3 offset1" id="product_side">
+			<span class="span3 " id="product_side">
 				<form>
-					<h3>Quantity : <%= @product.quantity %></h3>	
-					<div class="push"></div>
+					<h3>數量 : <%= @product.quantity %></h3>	
+					<strike><h3>原價 	 : <%= (@product.price*1.1).to_i %></h3></strike>
+					<h3>特價 	 : <%= @product.price %></h3>
+					
 					<% if @product.quantity > 0 %>
 						<%= link_to("Add to cart", add_to_cart_product_path(@product), method: :post, class: "btn btn_large") %>
 					<% else %>

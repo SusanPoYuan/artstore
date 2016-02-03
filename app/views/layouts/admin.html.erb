@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Shop後台</title>
+  <title>Dashboard</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
@@ -16,7 +16,6 @@
         <ul class="nav nav-pills nav-stacked" style="max-width: 300px;">
           <li> <%= link_to("Products", admin_products_path) %> </li>
           <li> <%= link_to("Users", admin_users_path) %></li>
-          <li> <%= link_to("Sidekiq", sidekiq_web_path) %></li>
         </ul>
       </div>
       <div class="col-md-10">
