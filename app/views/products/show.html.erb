@@ -22,26 +22,19 @@
 			</span>
 			<div class="push"></div>
 			<div class="push"></div>
-			<span class="span3 " id="product_side">
 				<form>
-					<h3>數量 : <%= @product.quantity %></h3>	
-					<strike><h3>原價 	 : <%= (@product.price*1.1).to_i %></h3></strike>
+				<span class="span3 " id="product_side">
+					<div id="product_side_2">
+						<h3>數量 : <%= @product.quantity %></h3>	
+						<strike><h3>原價 	 : <%= (@product.price*1.1).to_i %></h3></strike>
+					</div>
 					<h3>特價 	 : <%= @product.price %></h3>
-					
 					<% if @product.quantity > 0 %>
 						<%= link_to("Add to cart", add_to_cart_product_path(@product), method: :post, class: "btn btn_large") %>
 					<% else %>
 						<%= link_to("Sold out", "#", class: "btn btn_large disabled") %>
-					<% end %>
-					</ul>		
+					<% end %>		
 				</form>
-				<div id="pruduct_share">
-					<span class='st_sharethis_large' displayText='ShareThis'></span>
-					<span class='st_facebook_large' displayText='Facebook'></span>
-					<span class='st_twitter_large' displayText='Tweet'></span>
-					<span class='st_pinterest_large' displayText='Pinterest'></span>
-					<span class='st_email_large' displayText='Email'></span>
-				</div>
 			</span>
 		</div>
 <div class="push"></div>
