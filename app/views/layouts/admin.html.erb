@@ -1,14 +1,14 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Artstore 後台</title>
+  <title>Shop後台</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
 <body>
-  <div class="container">
-    <%= render "common/navbar" %>
+  <%= render "common/navbar" %>
+  <div id="content" class="container-fluid"  data-spy="scroll">  
     <%= notice_message %>
 
     <div class="row">

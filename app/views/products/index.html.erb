@@ -1,14 +1,36 @@
-<div class = 'row'>
-	<% @products.each do |product| %>
-	<div class = "col-xs-6 col-md-3">
-		<%= link_to product_path(product) do %>
-			<% if product.photo.present? %>
-				<%= image_tag(product.photo.image.thumb.url, class: "thumbnail") %>
-			<% else %>
-				<%= image_tag("http://placehold.it/200x200&text=No Pic", class: "thumbail") %>
-			<% end %>
-		<% end %>
-		<%= product.title %> $ <%= product.price %>
-	</div>
-	<% end %>
-</div>
+
+
+			<section id="abiti">
+				<div class="row-fluid" style="margin-left:20px">
+					
+					<ul class="thumbnails row-fluid" >
+						<% @products.each do |product| %>
+						<% if product.id%5 == 0 %>
+							</ul>
+							<ul class="thumbnails row-fluid" >
+						<% end %>
+						<li class="span3">
+							<div class="thumbnail">
+									<% if product.photo.present? %>
+									<%= image_tag(product.photo.image.thumb.url, class: "thumbnail") %>
+									<% else %>
+										<%= image_tag("http://placehold.it/200x200&text=No Pic", class: "thumbail") %>
+									<% end %>
+									<div class="caption">
+										<h5><%= product.title %></h5>
+										<p><%=product.description%></p>
+										<strong>$  <%= product.price %></strong>
+										<%= link_to("Buy", product_path(product), class: "btn btn_small") %>
+									</div>
+							</div>			
+						</li>
+					<% end %>
+					</ul>
+
+				</div>
+
+			</section>
+
+		
+
+		<div class="push"></div>

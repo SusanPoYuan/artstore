@@ -1,46 +1,59 @@
-<nav class="navbar navbar-default" role="navigation">
-	<div class = "container-fluid">
-		<div class="navbar-header">
-			<a class="navbar-brand" href="/">ArtStore</a>
+<div id="header">
+		<div class="container" id="header_upper">
+			<div class="row">
+				<span class="span4" id="logo">
+					<a href="\" style="font-size:36px"><font face="fantasy">Phekgoan Shop</font></a>
+					<font face="fantasy">Good choice!</font>
+				</span>
+				<span class="pull-right" id="header_cart">
+					<%= link_to carts_path do %>
+					<i class = "fa fa-shopping-cart fa-3x"> </i> <%= render_cart_items_count(current_cart) %>
+					<% end %>
+					<%if !current_user %>
+						<%= link_to("登入", new_user_session_path)%>
+					<% else %>
+						<%= link_to("登出", destroy_user_session_path, method: :delete) %>
+					<% end %>
+				</span>
+
+			</div>
 		</div>
 
-		<!-- 碰到時? -->
-		<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-
-			<ul class="nav navbar-nav">
-				<li class="active">
-					<%= link_to("Products", products_path) %>
-				</li>
-			</ul>
-			<ul class="nav navbar-nav navbar-right">
-				<li>
-					<%= link_to carts_path do %>
-					購物車 <i class = "fa fa-shopping-cart"> </i> <%= render_cart_items_count(current_cart) %>
-					<% end %>
-				</li>
-				<%if !current_user %>
-					<li> <%= link_to("登入", new_user_session_path)%> </li>
-				<% else %>
-					<li class="dropdown">
-						<a href="#" class="dropdown-toggle" data-toggle="dropdown">
-							Hi, <%= current_user.email %>
-							<b class= "caret"> </b>
-						</a>
-						<ul class="dropdown-menu">
-							<li>
-								<% if current_user.admin? %>
-								<li>
-									<%= link_to("Admin介面", admin_products_path) %>
-									<%= link_to("訂單介面", admin_orders_path) %>
+			<nav class="navbar navbar-inverse" role="navigation">
+				<div class="navbar-inner">
+					<div class="container">
+						<div class="nav-collapse">
+							<ul class="nav" id="header_menu">
+								<li class="active"><%= link_to("Products", products_path) %> </li>
+							</ul>
+							<ul class="nav navbar-nav navbar-right">
+								<%if !current_user %>
+									<li class="dropdown">
+										<a href="#" class="dropdown-toggle" data-toggle="dropdown">
+											<i class = "fa fa-bars fa-2x"> </i></a>
+									</li>
+								<% else %>
+									<li class="dropdown">
+										<a href="#" class="dropdown-toggle" data-toggle="dropdown">
+											<i class = "fa fa-bars fa-2x"> </i>
+										</a>
+										<ul class="dropdown-menu">
+											<li>
+												<% if current_user.admin? %>
+													<li>
+														<%= link_to("Admin介面", admin_products_path) %>
+														<%= link_to("訂單介面", admin_orders_path) %>
+													</li>
+												<% end %>
+												<li>
+													<%= link_to("訂單列表", account_orders_path) %>
+												</li>				
+											</li>
+										</ul>
 								<% end %>
-								<li>
-									<%= link_to("訂單列表", account_orders_path) %>
-								<%= link_to("登出", destroy_user_session_path, method: :delete) %>
-								</li>
-							</li>				
-						</ul>
-					</li>
-				<% end %>
-		</div> <!-- collapse -->
-	</div> <!-- fluid -->
-</nav>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</nav>
+</div>
