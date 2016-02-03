@@ -65,8 +65,6 @@ GEM
       execjs
     coffee-script-source (1.9.1.1)
     columnize (0.9.0)
-    concurrent-ruby (1.0.0)
-    connection_pool (2.2.0)
     css_parser (1.3.7)
       addressable
     debug_inspector (0.0.2)
@@ -233,10 +231,6 @@ GEM
     pay2go (0.1.0)
     pg (0.18.4)
     rack (1.6.4)
-    rack-mini-profiler (0.9.8)
-      rack (>= 1.1.3)
-    rack-protection (1.5.3)
-      rack
     rack-test (0.6.3)
       rack (>= 1.0)
     rails (4.2.2)
@@ -275,7 +269,6 @@ GEM
       trollop
     rdoc (4.2.0)
       json (~> 1.4)
-    redis (3.2.2)
     responders (2.1.1)
       railties (>= 4.2.0, < 5.1)
     roadie (2.4.3)
@@ -293,17 +286,9 @@ GEM
     sdoc (0.4.1)
       json (~> 1.7, >= 1.7.7)
       rdoc (~> 4.0)
-    sidekiq (4.1.0)
-      concurrent-ruby (~> 1.0)
-      connection_pool (~> 2.2, >= 2.2.0)
-      redis (~> 3.2, >= 3.2.1)
     simple_form (3.2.1)
       actionpack (> 4, < 5.1)
       activemodel (> 4, < 5.1)
-    sinatra (1.4.7)
-      rack (~> 1.5)
-      rack-protection (~> 1.4)
-      tilt (>= 1.3, < 3)
     spring (1.3.6)
     sprockets (3.2.0)
       rack (~> 1.0)
@@ -352,15 +337,12 @@ DEPENDENCIES
   mini_magick
   pay2go
   pg
-  rack-mini-profiler
   rails (= 4.2.2)
   rails_12factor
   roadie (= 2.4.3)
   sass-rails (~> 5.0)
   sdoc (~> 0.4.0)
-  sidekiq
   simple_form
-  sinatra
   spring
   sqlite3
   turbolinks

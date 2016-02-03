@@ -9,8 +9,7 @@ Bundler.require(*Rails.groups)
 module Artstore
   class Application < Rails::Application
     config.autoload_paths += %W(#{config.root}/app/uploaders)
-    config.active_job.queue_adapter = :sidekiq
-    config.eager_load_paths += %W( #{config.root}/app/jobs )
+    config.active_job.queue_adapter = :delayed_job
     #config.active_job.queue_adapter = :delayed_job
     # Settings in config/environments/* take precedence over those specified here.
     # Application configuration should go into files in config/initializers
