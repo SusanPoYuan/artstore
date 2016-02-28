@@ -5,6 +5,20 @@
 					<a href="\" style="font-size:36px"><font face="fantasy">Phekgoan Shop</font></a>
 					<font face="fantasy">Good choice!</font>
 				</span>
+				<span class="span4" id="logo">
+				  <%= form_tag search_products_path , method: :get, class: "products-search-form" do %>
+			      <div class="input-group">
+			        <input type="text" class="form-control" name="q" value="<%= params[:q] %>" placeholder="搜尋公告關鍵字...">
+
+			        <span class="input-group-btn">
+			          <button type="submit" class="btn btn-default">
+			            <i class="fa fa-search"></i>
+			          </button>
+			        </span>
+			      </div>
+			    <% end %>
+			    </span>
+
 				<span class="pull-right" id="header_cart">
 					<%= link_to carts_path do %>
 					<i class = "fa fa-shopping-cart fa-3x"> </i> <%= render_cart_items_count(current_cart) %>
